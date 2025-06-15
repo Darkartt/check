@@ -1,17 +1,5 @@
 'use client';
 
-<<<<<<< HEAD
-import React, { Suspense, useState, useEffect, useLayoutEffect } from 'react'; // Added useLayoutEffect
-import { Canvas } from '@react-three/fiber'; // useLoader is not used directly here
-import { OrbitControls, useGLTF, Html } from '@react-three/drei';
-import * as THREE from 'three';
-
-// Texture paths for different wood types
-const placeholderTextures: { [key: string]: string } = {
-  walnut: '/walnut_grain.jpeg',
-  oak: '/oak_grain.jpeg',
-  cherry: '/cherry_grain.jpeg',
-=======
 import React, { Suspense, useState, useEffect, useLayoutEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF, Html } from '@react-three/drei';
@@ -22,7 +10,6 @@ const placeholderTextures: { [key: string]: string } = {
   walnut: '/walnut_grain.jpg', // Assuming this exists from homepage
   oak: '/oak_grain.jpg', // Placeholder, create this image if needed
   cherry: '/cherry_grain.jpg', // Placeholder, create this image if needed
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
 };
 
 // Function to create a simple placeholder texture if actual image fails to load
@@ -43,26 +30,14 @@ interface ModelProps {
 }
 
 function Model({ woodType }: ModelProps) {
-<<<<<<< HEAD
-  const { nodes } = useGLTF('/chair_model.glb') as any; // Cast to any to simplify GLTF type for now
-  const [currentTexture, setCurrentTexture] = useState<THREE.Texture | null>(null);
-  const [errorLoading, setErrorLoading] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useLayoutEffect(() => { // Changed to useLayoutEffect
-    setIsLoading(true);
-    setErrorLoading(false);
-=======
   // All hooks must be called unconditionally at the top level
   const gltf = useGLTF('/chair_model.glb') as any; // Reverted to 'as any'
   const { nodes } = gltf; // Destructure nodes here, after gltf is assigned
   const [currentTexture, setCurrentTexture] = useState<THREE.Texture | null>(null);
-  // Removed errorLoading state declaration
   const [isLoading, setIsLoading] = useState(true);
 
   useLayoutEffect(() => {
     setIsLoading(true);
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
     const texturePath = placeholderTextures[woodType];
     if (texturePath) {
       new THREE.TextureLoader().load(
@@ -81,26 +56,16 @@ function Model({ woodType }: ModelProps) {
             errEv
           );
           setCurrentTexture(createPlaceholderTexture(woodType === 'walnut' ? 0x654321 : woodType === 'oak' ? 0xBDA072 : 0xA0522D));
-<<<<<<< HEAD
-          setErrorLoading(true);
-=======
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
           setIsLoading(false);
         }
       );
     } else {
       console.warn(`No texture path defined for wood type: ${woodType}. Displaying fallback.`);
       setCurrentTexture(createPlaceholderTexture(0xcccccc)); // Grey placeholder
-<<<<<<< HEAD
-      setErrorLoading(true);
-=======
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
       setIsLoading(false);
     }
   }, [woodType]);
 
-<<<<<<< HEAD
-=======
   // Conditional returns must come after all hook calls
   if (!gltf || !nodes) {
     return (
@@ -112,7 +77,6 @@ function Model({ woodType }: ModelProps) {
     );
   }
 
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
   // Attempt to find a mesh with geometry. This is a common pattern for simple GLTFs.
   // You might need to adjust this based on your actual GLTF structure.
   const chairMeshNode = Object.values(nodes).find(node => (node as THREE.Mesh).isMesh && (node as THREE.Mesh).geometry) as THREE.Mesh | undefined;
@@ -156,9 +120,6 @@ const CommissionBackground: React.FC = () => {
 
   useEffect(() => {
     setIsClient(true);
-<<<<<<< HEAD
-  }, []);
-=======
     // Preload GLTF model for better performance
     useGLTF.preload('/chair_model.glb');
     // Preload initial textures
@@ -166,7 +127,6 @@ const CommissionBackground: React.FC = () => {
       if (src) new THREE.TextureLoader().load(src);
     });
   }, []); // Empty dependency array to run only once on client mount
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
 
   // Placeholder textures - these would ideally be preloaded or handled more robustly
   // For now, we're loading them inside the Model component.
@@ -215,21 +175,5 @@ const CommissionBackground: React.FC = () => {
     </div>
   );
 };
-
-<<<<<<< HEAD
-// Preload GLTF model for better performance
-useGLTF.preload('/chair_model.glb');
-// Preload initial textures
-Object.values(placeholderTextures).forEach(src => {
-  if (src) new THREE.TextureLoader().load(src);
-});
-=======
-// Removed global preload calls
-// useGLTF.preload('/chair_model.glb');
-// Object.values(placeholderTextures).forEach(src => {
-//   if (src) new THREE.TextureLoader().load(src);
-// });
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
-
 
 export default CommissionBackground;

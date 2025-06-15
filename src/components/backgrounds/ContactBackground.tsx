@@ -61,11 +61,7 @@ const ContactBackground: React.FC = () => {
       });
     };
 
-<<<<<<< HEAD
-    const animation = gsap.ticker.add(draw);
-=======
     gsap.ticker.add(draw); // Removed 'const animation ='
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
 
     const handleResize = () => {
       if (canvasRef.current) {
@@ -86,7 +82,7 @@ const ContactBackground: React.FC = () => {
     };
   }, []);
 
-    return (
+  return (
     <canvas
       ref={canvasRef}
       style={{
@@ -95,20 +91,9 @@ const ContactBackground: React.FC = () => {
         left: 0,
         width: '100vw', // Use viewport width for full coverage
         height: '100vh', // Use viewport height for full coverage
-<<<<<<< HEAD
-        zIndex: 1, // Restored to original value as requested
-        pointerEvents: 'none', // Ensure it doesn't interfere with interactions
-        overflow: 'hidden', // Prevent any overflow issues
-        backgroundImage: "url('/cherry_grain.jpeg')",
-        backgroundSize: 'cover',
-        backgroundRepeat: 'repeat',
-        backgroundColor: 'rgba(160, 82, 45, 0.2)', // Sienna with opacity as fallback
-        opacity: 0.8 // Subtle overall opacity
-=======
         zIndex: 1,
         pointerEvents: 'none', // Ensure it doesn't interfere with interactions
         overflow: 'hidden' // Prevent any overflow issues
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
       }}
     />
   );

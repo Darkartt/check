@@ -56,11 +56,7 @@ const AboutBackground: React.FC = () => {
     >
       <Lottie
         lottieRef={lottieRef}
-<<<<<<< HEAD
-        animationData={animationData as any} 
-=======
         animationData={animationData} // Removed 'as any'
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         loop={true}
         autoplay={true}
         style={{ height: '100%', width: '100%' }}
