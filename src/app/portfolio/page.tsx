@@ -4,6 +4,52 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+<<<<<<< HEAD
+import ProductGalleryBackground from "../../components/backgrounds/ProductGalleryBackground";
+import { motion } from "framer-motion";
+import Header from "../../components/Header";
+import "./portfolio.css";
+
+gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger - This was already here, my mistake in previous thought.
+
+export default function Portfolio() {
+  const portfolioGridRef = useRef<HTMLDivElement>(null); // Ref for the grid container
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (portfolioGridRef.current) {
+        const items = gsap.utils.toArray<HTMLElement>('.gallery-item');
+        if (items.length > 0) {
+          gsap.from(items, {
+            duration: 1.2,
+            y: 100,
+            opacity: 0,
+            stagger: 0.15,
+            ease: "power4.out",
+            scrollTrigger: {
+              trigger: portfolioGridRef.current,
+              start: "top 80%", 
+              once: true,
+              // markers: true, // Uncomment for debugging
+            },
+          });
+        }
+      }
+      // Refresh ScrollTrigger after a short delay to ensure layout is stable
+      // This might be better handled globally or after specific layout-affecting operations
+      const refreshTimeout = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 300); 
+      // It's often better to refresh ScrollTrigger outside individual component effects,
+      // or use ScrollTrigger.refresh(true) for a hard refresh if absolutely necessary.
+      // For now, keeping the timeout as it might help with initial load.
+
+      return () => clearTimeout(refreshTimeout); // Cleanup for the timeout
+
+    }, portfolioGridRef); // Scope the context to portfolioGridRef
+
+    return () => ctx.revert(); // Cleanup GSAP animations and ScrollTriggers created within the context
+=======
 import { motion } from "framer-motion";
 import Header from "../../components/Header";
 import "./portfolio.css"; // Ensure this points to the correct CSS file if needed
@@ -46,6 +92,7 @@ export default function Portfolio() {
     }, galleryRef);
 
     return () => ctx.revert();
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
   }, []);
 
   return (
@@ -53,7 +100,14 @@ export default function Portfolio() {
       <Header />
 
       {/* Hero Section */}
+<<<<<<< HEAD
+      <section className="relative py-20 px-4 sm:px-8 bg-foreground/5 masterpieces-section">
+        {/* The ProductGalleryBackground is intended for the gallery grid, not the hero of this page. */}
+        {/* So, removing it from here. A generic or no specific background for hero. */}
+        {/* <ProductGalleryBackground />  */}
+=======
       <section className="relative py-16 px-4 sm:px-8 bg-foreground/5">
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto relative" style={{ zIndex: 10 }}>
           <motion.h2 
             className="text-4xl font-serif font-bold text-accent-primary mb-6"
@@ -68,6 +122,20 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
+<<<<<<< HEAD
+          >Explore the exceptional craftsmanship of Elite Woodcraft through our portfolio of bespoke woodcarvings, each a testament to artistry and precision.</motion.p>
+        </div>
+      </section>
+
+      {/* Portfolio Grid Section */}
+      <section className="relative py-20 px-4 sm:px-8 bg-[#3a2c28] portfolio-background"> {/* Dark brown-red background */}
+        <div style={{ zIndex: 0, position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
+          <ProductGalleryBackground />
+        </div>
+        <div className="container mx-auto relative z-10"> {/* Ensure content is above the background */}
+          <motion.div 
+            className="flex justify-between items-center mb-8"
+=======
           >Explore the artistry of Elite Woodcraft through our portfolio of bespoke woodcarvings, custom furniture, and architectural elements crafted for clients worldwide.</motion.p>
         </div>
       </section>
@@ -193,18 +261,99 @@ export default function Portfolio() {
           </div>
           <motion.div 
             className="text-center mt-12"
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
+<<<<<<< HEAD
+            <h3 className="text-xl font-serif font-semibold text-accent-primary">Featured Projects</h3>
+            <div className="flex space-x-4">
+              <button className="text-foreground/70 hover:text-foreground border border-foreground/20 px-3 py-1 rounded-md text-sm">All</button>
+              <button className="text-foreground/70 hover:text-foreground border border-foreground/20 px-3 py-1 rounded-md text-sm">Furniture</button>
+              <button className="text-foreground/70 hover:text-foreground border border-foreground/20 px-3 py-1 rounded-md text-sm">Decorative</button>
+              <button className="text-foreground/70 hover:text-foreground border border-foreground/20 px-3 py-1 rounded-md text-sm">Architectural</button>
+            </div>
+          </motion.div>
+          <div ref={portfolioGridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Added ref */}
+            {/* Project 1 */}
+            <div className="group gallery-item"> {/* Changed motion.div to div, added gallery-item, removed framer-motion props */}
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute top-3 right-3 bg-accent-primary text-background text-xs font-bold px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">Featured</div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">View Details</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Grand Oak Dining Set</h4>
+              <p className="text-foreground/70 text-sm">A bespoke dining table and chairs crafted for a luxury estate, featuring intricate carvings and premium oak.</p>
+            </div>
+            {/* Project 2 */}
+            <div className="group gallery-item"> {/* Changed motion.div to div, added gallery-item, removed framer-motion props */}
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">View Details</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Walnut Wall Installation</h4>
+              <p className="text-foreground/70 text-sm">A custom wall sculpture for a corporate lobby, showcasing natural walnut grain with modern design.</p>
+            </div>
+            {/* Project 3 */}
+            <div className="group gallery-item"> {/* Changed motion.div to div, added gallery-item, removed framer-motion props */}
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">View Details</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Cherry Library Mantels</h4>
+              <p className="text-foreground/70 text-sm">Ornate mantels designed for a private library, crafted in rich cherry with traditional detailing.</p>
+            </div>
+            {/* Project 4 */}
+            <div className="group gallery-item"> {/* Changed motion.div to div, added gallery-item, removed framer-motion props */}
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">View Details</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Maple Staircase Balustrade</h4>
+              <p className="text-foreground/70 text-sm">A grand staircase feature with hand-carved balusters, enhancing a historic home's elegance.</p>
+            </div>
+            {/* Project 5 */}
+            <div className="group gallery-item"> {/* Changed motion.div to div, added gallery-item, removed framer-motion props */}
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute top-3 right-3 bg-accent-secondary text-background text-xs font-bold px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">Recent</div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">View Details</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Ebony Entrance Doors</h4>
+              <p className="text-foreground/70 text-sm">Custom entrance doors with striking ebony finish, designed to make a lasting first impression.</p>
+            </div>
+            {/* Project 6 */}
+            <div className="group gallery-item"> {/* Changed motion.div to div, added gallery-item, removed framer-motion props */}
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">View Details</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Mahogany Study Desk</h4>
+              <p className="text-foreground/70 text-sm">A bespoke desk crafted for productivity and style, featuring classic mahogany joinery.</p>
+            </div>
+          </div>
+          <div className="mt-12 flex justify-center">
+            <div className="flex space-x-2">
+              <button className="bg-accent-primary text-background px-3 py-1 rounded-md text-sm">1</button>
+              <button className="text-foreground/70 hover:text-foreground px-3 py-1 rounded-md text-sm">2</button>
+              <button className="text-foreground/70 hover:text-foreground px-3 py-1 rounded-md text-sm">Next →</button>
+            </div>
+          </div>
+=======
             <Link href="/portfolio/all" className="inline-block border-2 border-accent-primary text-accent-primary px-8 py-3 rounded-md font-medium hover:bg-accent-primary/10 transition-colors">View All Projects</Link>
           </motion.div>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         </div>
       </section>
 
       {/* Call to Action Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-8 bg-accent-primary/10">
+=======
       <section className="py-16 px-4 sm:px-8 bg-accent-primary/10">
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <motion.div 
           className="container mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -213,6 +362,12 @@ export default function Portfolio() {
           viewport={{ once: true }}
         >
           <h3 className="text-3xl font-serif font-bold text-accent-primary mb-4">Inspired by Our Work?</h3>
+<<<<<<< HEAD
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">Commission a custom piece that reflects your unique vision and complements your space with unparalleled craftsmanship.</p>
+          <Link href="/contact" className="inline-block bg-accent-primary text-background px-8 py-3 rounded-md font-medium hover:bg-accent-primary/90 transition-colors">Request a Consultation</Link>
+        </motion.div>
+      </section>
+=======
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">Commission a bespoke piece that reflects your unique style. Let's create something extraordinary together.</p>
           <Link href="/contact" className="inline-block bg-accent-primary text-background px-8 py-3 rounded-md font-medium hover:bg-accent-primary/90 transition-colors">Request a Consultation</Link>
         </motion.div>
@@ -291,6 +446,7 @@ export default function Portfolio() {
           </div>
         </div>
       </footer>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
     </div>
   );
 }

@@ -1,6 +1,14 @@
 "use client";
 
 import Link from "next/link";
+<<<<<<< HEAD
+import ThreeBackground from "../../components/ThreeBackground";
+import { motion } from "framer-motion";
+import Header from "../../components/Header";
+import "./shop.css";
+
+export default function Shop() {
+=======
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
@@ -101,12 +109,20 @@ export default function Shop() {
     (woodType === "all" || product.wood === woodType)
   );
 
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
 
       {/* Hero Section */}
+<<<<<<< HEAD
+      <section className="relative py-20 px-4 sm:px-8 bg-foreground/5 hero-wood-effect">
+        <div className="absolute inset-0 overflow-hidden" style={{ zIndex: -1, pointerEvents: 'none' }}>
+          <ThreeBackground sceneType="shop" />
+        </div>
+=======
       <section className="relative py-16 px-4 sm:px-8 bg-foreground/5">
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto relative" style={{ zIndex: 10 }}>
           <motion.h2 
             className="text-4xl font-serif font-bold text-accent-primary mb-6"
@@ -114,13 +130,28 @@ export default function Shop() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+<<<<<<< HEAD
+          >Timeless Woodcraft Collection</motion.h2>
+=======
           >Shop Elite Woodcraft</motion.h2>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
           <motion.p 
             className="text-lg text-foreground/80 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
+<<<<<<< HEAD
+          >Browse our curated selection of handcrafted wooden pieces, each embodying the artistry and precision of Elite Woodcraft.</motion.p>
+        </div>
+      </section>
+
+      {/* Product Grid Section */}
+      <section className="py-20 px-4 sm:px-8 bg-background shop-background">
+        <div className="container mx-auto">
+          <motion.div 
+            className="flex justify-between items-center mb-8"
+=======
           >Browse our collection of handcrafted wooden pieces, from elegant decor to functional art, all crafted with the same dedication as our bespoke commissions.</motion.p>
         </div>
       </section>
@@ -130,49 +161,172 @@ export default function Shop() {
         <div className="container mx-auto">
           <motion.h3 
             className="text-3xl font-serif font-bold text-accent-primary mb-8 text-center"
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+<<<<<<< HEAD
+          >
+            <h3 className="text-xl font-serif font-semibold text-accent-primary">Featured Products</h3>
+            <div className="flex space-x-4">
+              <button className="text-foreground/70 hover:text-foreground border border-foreground/20 px-3 py-1 rounded-md text-sm">Filter</button>
+              <button className="text-foreground/70 hover:text-foreground border border-foreground/20 px-3 py-1 rounded-md text-sm">Sort</button>
+            </div>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Product 1 */}
+            <motion.div 
+              className="group"
+=======
           >Shop by Category</motion.h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <motion.div 
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
+<<<<<<< HEAD
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute top-3 right-3 bg-accent-primary text-background text-xs font-bold px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">Featured</div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">Quick View</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Hand-Carved Oak Dining Table</h4>
+              <p className="text-foreground/70 text-sm mb-2">A majestic centerpiece crafted from premium oak with intricate detailing.</p>
+              <p className="font-bold text-foreground">$4,500.00</p>
+              <button className="w-full mt-3 bg-accent-primary text-background px-4 py-2 rounded-md font-medium hover:bg-accent-primary/90 transition-colors opacity-0 group-hover:opacity-100">Add to Wishlist</button>
+            </motion.div>
+            {/* Product 2 */}
+            <motion.div 
+              className="group"
+=======
               <Link href="/shop/decorative" className="block relative overflow-hidden rounded-lg shadow-lg h-48 bg-foreground/10 group">
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
                 <h4 className="absolute bottom-0 left-0 p-6 text-background text-xl font-serif font-semibold">Decorative Pieces</h4>
               </Link>
             </motion.div>
             <motion.div 
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
+<<<<<<< HEAD
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">Quick View</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Walnut Wall Sculpture</h4>
+              <p className="text-foreground/70 text-sm mb-2">An elegant wall piece showcasing the natural beauty of walnut grain.</p>
+              <p className="font-bold text-foreground">$1,200.00</p>
+              <button className="w-full mt-3 bg-accent-primary text-background px-4 py-2 rounded-md font-medium hover:bg-accent-primary/90 transition-colors opacity-0 group-hover:opacity-100">Add to Wishlist</button>
+            </motion.div>
+            {/* Product 3 */}
+            <motion.div 
+              className="group"
+=======
               <Link href="/shop/furniture" className="block relative overflow-hidden rounded-lg shadow-lg h-48 bg-foreground/10 group">
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
                 <h4 className="absolute bottom-0 left-0 p-6 text-background text-xl font-serif font-semibold">Small Furniture</h4>
               </Link>
             </motion.div>
             <motion.div 
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
             >
+<<<<<<< HEAD
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute top-3 right-3 bg-foreground/80 text-foreground text-xs font-bold px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">Sold Out</div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">Quick View</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Cherry Wood Mantel</h4>
+              <p className="text-foreground/70 text-sm mb-2">A stunning architectural piece with ornate carvings in rich cherry wood.</p>
+              <p className="font-bold text-foreground">$3,800.00</p>
+              <button className="w-full mt-3 bg-accent-primary text-background px-4 py-2 rounded-md font-medium hover:bg-accent-primary/90 transition-colors opacity-0 group-hover:opacity-100">Add to Wishlist</button>
+            </motion.div>
+            {/* Product 4 */}
+            <motion.div 
+              className="group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">Quick View</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Maple Jewelry Box</h4>
+              <p className="text-foreground/70 text-sm mb-2">A delicate box with intricate inlays, perfect for treasured keepsakes.</p>
+              <p className="font-bold text-foreground">$650.00</p>
+              <button className="w-full mt-3 bg-accent-primary text-background px-4 py-2 rounded-md font-medium hover:bg-accent-primary/90 transition-colors opacity-0 group-hover:opacity-100">Add to Wishlist</button>
+            </motion.div>
+            {/* Product 5 */}
+            <motion.div 
+              className="group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute top-3 right-3 bg-accent-secondary text-background text-xs font-bold px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">New</div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">Quick View</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Ebony Chess Set</h4>
+              <p className="text-foreground/70 text-sm mb-2">A luxurious game set with hand-carved pieces in striking ebony and boxwood.</p>
+              <p className="font-bold text-foreground">$1,950.00</p>
+              <button className="w-full mt-3 bg-accent-primary text-background px-4 py-2 rounded-md font-medium hover:bg-accent-primary/90 transition-colors opacity-0 group-hover:opacity-100">Add to Wishlist</button>
+            </motion.div>
+            {/* Product 6 */}
+            <motion.div 
+              className="group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative overflow-hidden rounded-lg shadow-md h-80 bg-foreground/10 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/80 text-foreground px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background">Quick View</button>
+              </div>
+              <h4 className="text-lg font-serif font-semibold text-foreground mb-1">Mahogany Bookshelf</h4>
+              <p className="text-foreground/70 text-sm mb-2">A stately piece with classic joinery, designed to showcase your literary collection.</p>
+              <p className="font-bold text-foreground">$2,700.00</p>
+              <button className="w-full mt-3 bg-accent-primary text-background px-4 py-2 rounded-md font-medium hover:bg-accent-primary/90 transition-colors opacity-0 group-hover:opacity-100">Add to Wishlist</button>
+            </motion.div>
+          </div>
+          <div className="mt-12 flex justify-center">
+            <div className="flex space-x-2">
+              <button className="bg-accent-primary text-background px-3 py-1 rounded-md text-sm">1</button>
+              <button className="text-foreground/70 hover:text-foreground px-3 py-1 rounded-md text-sm">2</button>
+              <button className="text-foreground/70 hover:text-foreground px-3 py-1 rounded-md text-sm">3</button>
+              <button className="text-foreground/70 hover:text-foreground px-3 py-1 rounded-md text-sm">Next →</button>
+            </div>
+=======
               <Link href="/shop/accessories" className="block relative overflow-hidden rounded-lg shadow-lg h-48 bg-foreground/10 group">
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
                 <h4 className="absolute bottom-0 left-0 p-6 text-background text-xl font-serif font-semibold">Wooden Accessories</h4>
               </Link>
             </motion.div>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
           </div>
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* Custom Order Section */}
+      <section className="py-20 px-4 sm:px-8 bg-accent-primary/10">
+=======
       {/* Filtering and Sorting Section */}
       <section className="py-8 px-4 sm:px-8 bg-foreground/5">
         <div className="container mx-auto">
@@ -355,6 +509,7 @@ export default function Shop() {
 
       {/* Call to Action Section with Custom Order Form */}
       <section className="py-16 px-4 sm:px-8 bg-accent-primary/10">
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <motion.div 
           className="container mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -362,6 +517,13 @@ export default function Shop() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
+<<<<<<< HEAD
+          <h3 className="text-3xl font-serif font-bold text-accent-primary mb-4">Commission a Custom Piece</h3>
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">Can't find exactly what you're looking for? Collaborate with our artisans to create a bespoke woodcarving tailored to your vision.</p>
+          <Link href="/contact" className="inline-block bg-accent-primary text-background px-8 py-3 rounded-md font-medium hover:bg-accent-primary/90 transition-colors">Request Custom Order</Link>
+        </motion.div>
+      </section>
+=======
           <h3 className="text-3xl font-serif font-bold text-accent-primary mb-4">Looking for Something Unique?</h3>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">Can't find the perfect piece? Commission a custom creation tailored to your vision.</p>
           <div className="max-w-xl mx-auto bg-background p-6 rounded-lg shadow-md">
@@ -460,6 +622,7 @@ export default function Shop() {
           </div>
         </div>
       </footer>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
     </div>
   );
 }

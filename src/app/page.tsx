@@ -1,6 +1,14 @@
 "use client";
 
+<<<<<<< HEAD
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+=======
+import Link from "next/link";
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
 import HomeBackground from "../components/backgrounds/HomeBackground";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
@@ -44,7 +52,11 @@ export default function Home() {
       </section>
 
       {/* Featured Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-8 bg-background relative z-10"> {/* Added relative and z-index */}
+=======
       <section className="py-16 px-4 sm:px-8 bg-background relative z-10"> {/* Added relative and z-index */}
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto">
           <motion.h3 
             className="text-3xl font-serif font-bold text-accent-primary mb-8 text-center"
@@ -110,7 +122,11 @@ export default function Home() {
       </section>
 
       {/* About Preview Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-8 bg-foreground/5 relative z-10"> {/* Added relative and z-index */}
+=======
       <section className="py-16 px-4 sm:px-8 bg-foreground/5 relative z-10"> {/* Added relative and z-index */}
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <motion.div 
             className="md:w-1/2 mb-8 md:mb-0 md:pr-8"
@@ -137,7 +153,11 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-8 bg-background relative z-10"> {/* Added relative and z-index */}
+=======
       <section className="py-16 px-4 sm:px-8 bg-background relative z-10"> {/* Added relative and z-index */}
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto">
           <motion.h3 
             className="text-3xl font-serif font-bold text-accent-primary mb-8 text-center"
@@ -154,7 +174,11 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
+<<<<<<< HEAD
+              <p className="italic text-foreground/80 mb-4">"The custom dining table from Elite Woodcraft is a masterpiece. The craftsmanship and attention to detail exceeded our highest expectations."</p>
+=======
               <p className="italic text-foreground/80 mb-4">'The custom dining table from Elite Woodcraft is a masterpiece. The craftsmanship and attention to detail exceeded our highest expectations.'</p>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
               <p className="font-bold text-foreground">- Margaret R., Interior Designer</p>
             </motion.div>
             <motion.div 
@@ -164,7 +188,11 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
+<<<<<<< HEAD
+              <p className="italic text-foreground/80 mb-4">"We commissioned a carved mantel for our estate, and the result is breathtaking. Their expertise transformed our vision into reality."</p>
+=======
               <p className="italic text-foreground/80 mb-4">'We commissioned a carved mantel for our estate, and the result is breathtaking. Their expertise transformed our vision into reality.'</p>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
               <p className="font-bold text-foreground">- Edward T., Homeowner</p>
             </motion.div>
           </div>
@@ -172,7 +200,11 @@ export default function Home() {
       </section>
 
       {/* Call to Action Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-8 bg-accent-primary/10 relative z-10"> {/* Added relative and z-index */}
+=======
       <section className="py-16 px-4 sm:px-8 bg-accent-primary/10 relative z-10"> {/* Added relative and z-index */}
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <motion.div 
           className="container mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -187,6 +219,8 @@ export default function Home() {
       </section>
 
       {/* Removed GSAP ScrollTrigger Initialization in favor of Framer Motion */}
+<<<<<<< HEAD
+=======
 
       {/* Footer Section */}
       <footer className="py-8 px-4 sm:px-8 bg-foreground/5 border-t border-foreground/10 relative z-10"> {/* Added relative and z-index */}
@@ -259,6 +293,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
     </div>
   );
 }

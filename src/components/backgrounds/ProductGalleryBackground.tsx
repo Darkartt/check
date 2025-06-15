@@ -28,7 +28,10 @@ const ProductGalleryBackground: React.FC = () => {
 
     const ctx = gsap.context(() => {
       console.log("ProductGalleryBackground: Initializing ScrollTrigger animations for parallax effect");
+<<<<<<< HEAD
+=======
       // Removed 'const colors ='
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
       const speeds = [0.1, 0.25, 0.4, 0.55, 0.7, 0.85]; // Varying scroll speeds for parallax
 
       layersRef.current.forEach((layer, index) => {
@@ -90,9 +93,16 @@ const ProductGalleryBackground: React.FC = () => {
             height: '200%', // Taller to allow for parallax movement
             top: '-50%', // Start higher to cover initial view and allow upward movement
             left: 0,
+<<<<<<< HEAD
+            backgroundImage: "url('/oak_grain.jpeg')",
+            backgroundSize: 'cover',
+            backgroundRepeat: 'repeat',
+            opacity: 0.2 + (index * 0.1), // Gradually increase opacity for depth
+=======
             backgroundColor: ['#6A5A4F', '#7B6B5F', '#8C7C6F', '#9D8D7F', '#AE9E8F', '#BFADA0'][index],
             // Opacity can be adjusted per layer if needed, e.g., layers farther back are more transparent
             // opacity: 1 - (index * 0.1), 
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
             zIndex: - (6 - index) // Ensure layers stack correctly
           }}
         />

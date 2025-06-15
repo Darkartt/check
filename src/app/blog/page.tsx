@@ -15,7 +15,11 @@ export default function Blog() {
       <Header />
 
       {/* Hero Section */}
+<<<<<<< HEAD
+      <section className="relative py-20 px-4 sm:px-8 bg-foreground/5 overflow-hidden" style={{ zIndex: 5 }}>
+=======
       <section className="relative py-16 px-4 sm:px-8 bg-foreground/5 overflow-hidden" style={{ zIndex: 5 }}>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto relative">
           <motion.h2 
             className="text-4xl font-serif font-bold text-accent-primary mb-6"
@@ -35,7 +39,11 @@ export default function Blog() {
       </section>
 
       {/* Blog Posts Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-8 bg-background">
+=======
       <section className="py-16 px-4 sm:px-8 bg-background">
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto max-w-4xl">
           <motion.div 
             className="flex justify-between items-center mb-8"
@@ -166,7 +174,11 @@ export default function Blog() {
       </section>
 
       {/* Newsletter Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-8 bg-accent-primary/10">
+=======
       <section className="py-16 px-4 sm:px-8 bg-accent-primary/10">
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <motion.div 
           className="container mx-auto text-center max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
@@ -183,6 +195,8 @@ export default function Blog() {
           <p className="text-foreground/60 text-sm mt-3">We respect your privacy and will never share your information.</p>
         </motion.div>
       </section>
+<<<<<<< HEAD
+=======
 
       {/* Footer Section */}
       <footer className="py-8 px-4 sm:px-8 bg-foreground/5 border-t border-foreground/10">
@@ -255,6 +269,7 @@ export default function Blog() {
           </div>
         </div>
       </footer>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
     </div>
   );
 }

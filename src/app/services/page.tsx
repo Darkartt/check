@@ -19,7 +19,11 @@ export default function Services() {
       <Header />
 
       {/* Hero Section */}
+<<<<<<< HEAD
+      <section className="relative py-20 px-4 sm:px-8 bg-foreground/5 overflow-hidden" style={{ zIndex: 5 }}>
+=======
       <section className="relative py-24 px-4 sm:px-8 bg-foreground/5 overflow-hidden" style={{ zIndex: 5 }}>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto relative">
           <motion.h2 
             className="text-4xl font-serif font-bold text-accent-primary mb-6"
@@ -39,7 +43,11 @@ export default function Services() {
       </section>
 
       {/* Services Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-8 bg-background">
+=======
       <section className="py-24 px-4 sm:px-8 bg-background">
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto max-w-5xl">
           <motion.h3 
             className="text-3xl font-serif font-bold text-accent-primary mb-12 text-center"
@@ -110,7 +118,11 @@ export default function Services() {
       </section>
 
       {/* Workshops Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-8 bg-foreground/5">
+=======
       <section className="py-24 px-4 sm:px-8 bg-foreground/5">
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto max-w-4xl">
           <motion.h3 
             className="text-3xl font-serif font-bold text-accent-primary mb-10 text-center"
@@ -136,7 +148,11 @@ export default function Services() {
       </section>
 
       {/* Call to Action Section */}
+<<<<<<< HEAD
+      <section className="py-20 px-4 sm:px-8 bg-accent-primary/10">
+=======
       <section className="py-24 px-4 sm:px-8 bg-accent-primary/10">
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <motion.div 
           className="container mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -149,6 +165,8 @@ export default function Services() {
           <Link href="/commission" className="inline-block bg-accent-primary text-background px-8 py-3 rounded-md font-medium hover:bg-accent-primary/90 transition-colors">Commission a Piece</Link>
         </motion.div>
       </section>
+<<<<<<< HEAD
+=======
 
       {/* Footer Section */}
       <footer className="py-8 px-4 sm:px-8 bg-foreground/5 border-t border-foreground/10">
@@ -225,6 +243,7 @@ export default function Services() {
           <p className="text-foreground/60 text-sm mt-3 text-center">We respect your privacy and will never share your information.</p>
         </div>
       </footer>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
       </div>
     </div>
   );

@@ -16,14 +16,22 @@ const ThreeBackground = ({ sceneType }: ThreeBackgroundProps) => {
   }, []);
 
   useEffect(() => {
+<<<<<<< HEAD
+    if (!isClient || !mountRef.current || typeof window === 'undefined') return;
+=======
     const currentMount = mountRef.current; // Capture ref value
     if (!isClient || !currentMount || typeof window === 'undefined' || typeof document === 'undefined') return; // Added typeof document check
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
 
     console.log(`ThreeBackground: Initializing scene for ${sceneType}`);
     if (sceneType === 'blog') {
       console.log("Blog scene: Setting up rotating scroll animation.");
       console.log("Blog scene: Component mounted, checking renderer and DOM element.");
+<<<<<<< HEAD
+      if (mountRef.current) {
+=======
       if (currentMount) { // Use currentMount
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         console.log("Blog scene: Mount ref is available, appending renderer DOM element.");
       } else {
         console.error("Blog scene: Mount ref is not available, rendering may fail.");
@@ -40,8 +48,13 @@ const ThreeBackground = ({ sceneType }: ThreeBackgroundProps) => {
     const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" }); // Enabled antialiasing and high performance
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+<<<<<<< HEAD
+    mountRef.current.innerHTML = ''; // Clear any existing content
+    mountRef.current.appendChild(renderer.domElement);
+=======
     currentMount.innerHTML = ''; // Clear any existing content
     currentMount.appendChild(renderer.domElement);
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
 
     // Add OrbitControls for interaction
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -129,7 +142,17 @@ const ThreeBackground = ({ sceneType }: ThreeBackgroundProps) => {
           metalness: 0.2,
           side: THREE.DoubleSide,
         });
+<<<<<<< HEAD
+        const polishedWoodMaterial = new THREE.MeshStandardMaterial({
+          map: oakTexture,
+          color: 0x8B4513,
+          roughness: 0.3,
+          metalness: 0.4,
+          side: THREE.DoubleSide,
+        });
+=======
         // Removed polishedWoodMaterial as it's unused
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
 
         const owlGroup = new THREE.Group();
         scene.add(owlGroup);
@@ -283,6 +306,10 @@ const ThreeBackground = ({ sceneType }: ThreeBackgroundProps) => {
       if (isVisible) {
         requestAnimationFrame(animate);
         animateFunction();
+<<<<<<< HEAD
+        console.log("Animation loop running for scene: " + sceneType);
+=======
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
       }
     };
     animate();
@@ -291,9 +318,15 @@ const ThreeBackground = ({ sceneType }: ThreeBackgroundProps) => {
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
         isVisible = true;
+<<<<<<< HEAD
+        if (mountRef.current && !mountRef.current.querySelector('canvas')) {
+          mountRef.current.innerHTML = '';
+          mountRef.current.appendChild(renderer.domElement);
+=======
         if (currentMount && !currentMount.querySelector('canvas')) { // Use currentMount
           currentMount.innerHTML = '';
           currentMount.appendChild(renderer.domElement);
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         }
         animate();
       } else {
@@ -314,20 +347,35 @@ const ThreeBackground = ({ sceneType }: ThreeBackgroundProps) => {
     return () => {
       window.removeEventListener('resize', handleResize);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
+<<<<<<< HEAD
+      if (mountRef.current) {
+        mountRef.current.innerHTML = '';
+=======
       if (currentMount) { // Use currentMount for consistency
         currentMount.innerHTML = '';
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
       }
       renderer.dispose();
       controls.dispose();
     };
+<<<<<<< HEAD
+  }, [sceneType]);
+=======
   }, [sceneType, isClient]); // Added isClient to dependency array
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
 
   if (!isClient) {
     return null;
   }
 
   return (
+<<<<<<< HEAD
+    <div style={{ position: 'fixed', top: 0, left: 0, zIndex: -10, width: '100vw', height: '100vh', overflow: 'hidden', pointerEvents: 'none', background: 'transparent', isolation: 'isolate' }}>
+      <div ref={mountRef} style={{ width: '100%', height: '100%', zIndex: -10, pointerEvents: 'none' }} />
+    </div>
+=======
     <div ref={mountRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: -10, width: '100%', height: '100vh', overflow: 'hidden', pointerEvents: 'none', background: 'transparent', isolation: 'isolate' }} />
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
   );
 };
 

@@ -2,7 +2,10 @@
   "name": "professional-website",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
+=======
   "homepage": "https://exampledesign.co.uk/",
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

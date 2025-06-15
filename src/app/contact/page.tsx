@@ -57,7 +57,11 @@ export default function Contact() {
 
       {/* Hero Section */}
       {/* Removed the old ThreeBackground, ContactBackground is now at the root */}
+<<<<<<< HEAD
+      <section className="relative py-20 px-4 sm:px-8 bg-transparent"> {/* Made hero background transparent */}
+=======
       <section className="relative py-16 px-4 sm:px-8 bg-transparent"> {/* Made hero background transparent */}
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto relative" style={{ zIndex: 10 }}>
           <motion.h2 
             className="text-4xl font-serif font-bold text-accent-primary mb-6"
@@ -77,7 +81,11 @@ export default function Contact() {
       </section>
 
       {/* Contact Form Section */}
+<<<<<<< HEAD
+      <section className="relative z-10 py-20 px-4 sm:px-8 bg-background/90"> {/* Adjusted for slight transparency */}
+=======
       <section className="relative z-10 py-16 px-4 sm:px-8 bg-background"> {/* Added relative z-10 */}
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto max-w-4xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div 
@@ -149,7 +157,11 @@ export default function Contact() {
       </section>
 
       {/* Call to Action Section */}
+<<<<<<< HEAD
+      <section className="relative z-10 py-20 px-4 sm:px-8 bg-accent-primary/10"> {/* Added relative z-10 */}
+=======
       <section className="relative z-10 py-16 px-4 sm:px-8 bg-accent-primary/10"> {/* Added relative z-10 */}
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <motion.div 
           className="container mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -162,6 +174,8 @@ export default function Contact() {
           <button className="inline-block bg-accent-primary text-background px-8 py-3 rounded-md font-medium hover:bg-accent-primary/90 transition-colors">Call Us Now: (555) 123-4567</button>
         </motion.div>
       </section>
+<<<<<<< HEAD
+=======
 
       {/* Footer Section */}
       <footer className="relative z-10 py-8 px-4 sm:px-8 bg-foreground/5 border-t border-foreground/10"> {/* Added relative z-10 */}
@@ -234,6 +248,7 @@ export default function Contact() {
           </div>
         </div>
       </footer>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
     </div>
   );
 }

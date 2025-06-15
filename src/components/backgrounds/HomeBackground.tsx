@@ -27,7 +27,11 @@ const HomeBackground: React.FC = () => {
 
     const currentMount = mountRef.current;
 
+<<<<<<< HEAD
+    let ctx: ReturnType<typeof gsap.context> | undefined;
+=======
     let ctx: ReturnType<typeof gsap.context> | undefined; 
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
     ctx = gsap.context(() => {
       // Scene setup
       const scene = new THREE.Scene();
@@ -47,7 +51,11 @@ const HomeBackground: React.FC = () => {
       const textureLoader = new THREE.TextureLoader();
       const geometry = new THREE.PlaneGeometry(20, 12, 32, 32);
       const material = new THREE.MeshStandardMaterial({
+<<<<<<< HEAD
+        opacity: 0.95,
+=======
         opacity: 0.9,
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         transparent: true,
         roughness: 0.8,
         metalness: 0.1,
@@ -55,7 +63,11 @@ const HomeBackground: React.FC = () => {
       });
 
       textureLoader.load(
+<<<<<<< HEAD
+        '/walnut_grain.jpeg',
+=======
         '/walnut_grain.jpg',
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         (texture) => {
           material.map = texture;
           texture.wrapS = THREE.RepeatWrapping;
@@ -65,7 +77,11 @@ const HomeBackground: React.FC = () => {
         undefined,
         (errorEvent: unknown) => {
           console.warn(
+<<<<<<< HEAD
+            `Failed to load wood texture at /walnut_grain.jpeg. Displaying fallback color. Please ensure the image exists in the public folder. Error:`, 
+=======
             `Failed to load wood texture at /walnut_grain.jpg. Displaying fallback color. Please ensure the image exists in the public folder. Error:`, 
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
             errorEvent
           );
         }
@@ -75,6 +91,17 @@ const HomeBackground: React.FC = () => {
       scene.add(backgroundMesh);
       camera.position.z = 5;
 
+<<<<<<< HEAD
+      ScrollTrigger.create({
+        trigger: "body",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1,
+        onUpdate: self => {
+          backgroundMesh.rotation.y = self.progress * Math.PI * 0.25;
+        }
+      });
+=======
       // Ensure document.body is available before creating ScrollTrigger
       if (document.body) {
         ScrollTrigger.create({
@@ -104,6 +131,7 @@ const HomeBackground: React.FC = () => {
           }
         }, { once: true });
       }
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
 
       const handleMouseMove = (event: MouseEvent) => {
         mousePosition.current.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -172,7 +200,11 @@ const HomeBackground: React.FC = () => {
           if (material.map) material.map.dispose();
           clearTimeout(refreshTimeout);
           clearTimeout(refreshTimeout2);
+<<<<<<< HEAD
+          window.removeEventListener('load', handleWindowLoad);
+=======
           window.removeEventListener('load', handleWindowLoad); // Ensure this is removed
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         });
       }
 

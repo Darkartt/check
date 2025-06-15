@@ -1,6 +1,45 @@
 "use client";
 
 import Link from "next/link";
+<<<<<<< HEAD
+import { motion } from "framer-motion";
+import ThreeBackground from "../../components/ThreeBackground";
+
+export default function Process() {
+  return (
+    <div className="flex flex-col min-h-screen text-foreground relative overflow-hidden" style={{ background: 'transparent' }}>
+      {/* Full Page Background */}
+      <div className="absolute inset-0 overflow-hidden" style={{ zIndex: -1, pointerEvents: 'none', width: '100%', height: '100vh' }}>
+        <ThreeBackground sceneType="about" />
+      </div>
+      {/* Header Section */}
+      <header className="py-6 px-4 sm:px-8 bg-background border-b border-foreground/10 relative" style={{ zIndex: 10 }}>
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-serif font-bold text-accent-primary">Elite Woodcraft</h1>
+          <nav className="hidden md:flex space-x-8">
+            <Link href="/" className="text-foreground/80 hover:text-accent-primary transition-colors">Home</Link>
+            <Link href="/portfolio" className="text-foreground/80 hover:text-accent-primary transition-colors">Portfolio</Link>
+            <Link href="/shop" className="text-foreground/80 hover:text-accent-primary transition-colors">Shop</Link>
+            <Link href="/blog" className="text-foreground/80 hover:text-accent-primary transition-colors">Blog</Link>
+            <Link href="/contact" className="text-foreground/80 hover:text-accent-primary transition-colors">Contact</Link>
+          </nav>
+          {/* Mobile menu placeholder */}
+          <div className="md:hidden">
+            <button className="text-foreground/80 hover:text-accent-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative py-24 px-4 sm:px-8 bg-foreground/5 overflow-hidden" style={{ zIndex: 5 }}>
+        <div className="container mx-auto relative">
+=======
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -54,24 +93,217 @@ export default function Process() {
       {/* Hero Section */}
       <section className="relative py-16 px-4 sm:px-8 bg-foreground/5">
         <div className="container mx-auto relative" style={{ zIndex: 10 }}>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
           <motion.h2 
             className="text-4xl font-serif font-bold text-accent-primary mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+<<<<<<< HEAD
+          >Our Creative Process</motion.h2>
+=======
           >Our Craftsmanship Process</motion.h2>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
           <motion.p 
             className="text-lg text-foreground/80 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
+<<<<<<< HEAD
+          >Understand the journey from concept to completion at Elite Woodcraft, where each step is crafted with precision and passion to bring your vision to life.</motion.p>
+=======
           >Discover the meticulous journey of creating bespoke wooden masterpieces at Elite Woodcraft, from initial concept to final installation.</motion.p>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         </div>
       </section>
 
       {/* Process Steps Section */}
+<<<<<<< HEAD
+      <section className="py-24 px-4 sm:px-8 bg-background">
+        <div className="container mx-auto max-w-5xl">
+          <motion.h3 
+            className="text-3xl font-serif font-bold text-accent-primary mb-12 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >How We Work</motion.h3>
+          <div className="space-y-16">
+            {/* Step 1: Consultation */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="md:col-span-1 flex justify-center items-start">
+                <div className="w-16 h-16 bg-accent-primary/20 rounded-full flex items-center justify-center text-accent-primary font-bold text-xl">1</div>
+              </div>
+              <div className="md:col-span-2">
+                <h4 className="text-xl font-serif font-semibold text-foreground mb-4">Consultation & Vision</h4>
+                <p className="text-foreground/80 mb-4">Placeholder: We begin with a detailed consultation to understand your vision, needs, and preferences. Whether it's a custom furniture piece or a decorative carving, we discuss design ideas, materials, and intended use to ensure alignment.</p>
+                <p className="text-foreground/80">Placeholder: Timeline: Initial meeting (1-2 hours), follow-up discussions as needed (1-3 days).</p>
+              </div>
+            </motion.div>
+            {/* Step 2: Design & Approval */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="md:col-span-1 flex justify-center items-start">
+                <div className="w-16 h-16 bg-accent-primary/20 rounded-full flex items-center justify-center text-accent-primary font-bold text-xl">2</div>
+              </div>
+              <div className="md:col-span-2">
+                <h4 className="text-xl font-serif font-semibold text-foreground mb-4">Design & Approval</h4>
+                <p className="text-foreground/80 mb-4">Placeholder: Our artisans create detailed sketches or 3D renderings based on the consultation. We present these designs for your feedback and make revisions until the concept is perfected and approved.</p>
+                <p className="text-foreground/80">Placeholder: Timeline: Design phase (1-2 weeks), revisions and approval (3-7 days).</p>
+              </div>
+            </motion.div>
+            {/* Step 3: Material Selection */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="md:col-span-1 flex justify-center items-start">
+                <div className="w-16 h-16 bg-accent-primary/20 rounded-full flex items-center justify-center text-accent-primary font-bold text-xl">3</div>
+              </div>
+              <div className="md:col-span-2">
+                <h4 className="text-xl font-serif font-semibold text-foreground mb-4">Material Selection</h4>
+                <p className="text-foreground/80 mb-4">Placeholder: We source the finest hardwoods and materials that match the design aesthetic and durability requirements. You’ll have the opportunity to review samples and finalize choices.</p>
+                <p className="text-foreground/80">Placeholder: Timeline: Material selection and procurement (1-2 weeks).</p>
+              </div>
+            </motion.div>
+            {/* Step 4: Crafting */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="md:col-span-1 flex justify-center items-start">
+                <div className="w-16 h-16 bg-accent-primary/20 rounded-full flex items-center justify-center text-accent-primary font-bold text-xl">4</div>
+              </div>
+              <div className="md:col-span-2">
+                <h4 className="text-xl font-serif font-semibold text-foreground mb-4">Crafting & Creation</h4>
+                <p className="text-foreground/80 mb-4">Placeholder: Our master artisans begin crafting your piece using traditional and modern techniques. We provide periodic updates with photos or videos to show progress and ensure satisfaction.</p>
+                <p className="text-foreground/80">Placeholder: Timeline: Crafting phase (4-12 weeks, depending on complexity).</p>
+              </div>
+            </motion.div>
+            {/* Step 5: Finishing */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="md:col-span-1 flex justify-center items-start">
+                <div className="w-16 h-16 bg-accent-primary/20 rounded-full flex items-center justify-center text-accent-primary font-bold text-xl">5</div>
+              </div>
+              <div className="md:col-span-2">
+                <h4 className="text-xl font-serif font-semibold text-foreground mb-4">Finishing & Quality Assurance</h4>
+                <p className="text-foreground/80 mb-4">Placeholder: Once crafted, the piece undergoes meticulous finishing—staining, sealing, or polishing—and a thorough quality check to ensure it meets our high standards.</p>
+                <p className="text-foreground/80">Placeholder: Timeline: Finishing and QA (1-2 weeks).</p>
+              </div>
+            </motion.div>
+            {/* Step 6: Delivery */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="md:col-span-1 flex justify-center items-start">
+                <div className="w-16 h-16 bg-accent-primary/20 rounded-full flex items-center justify-center text-accent-primary font-bold text-xl">6</div>
+              </div>
+              <div className="md:col-span-2">
+                <h4 className="text-xl font-serif font-semibold text-foreground mb-4">Delivery & Installation</h4>
+                <p className="text-foreground/80 mb-4">Placeholder: We arrange secure delivery or shipping, and for larger pieces, offer professional installation at your location to ensure perfect placement and satisfaction.</p>
+                <p className="text-foreground/80">Placeholder: Timeline: Delivery scheduling and installation (1-3 weeks, depending on location).</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs Section */}
+      <section className="py-24 px-4 sm:px-8 bg-foreground/5">
+        <div className="container mx-auto max-w-4xl">
+          <motion.h3 
+            className="text-3xl font-serif font-bold text-accent-primary mb-10 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >Frequently Asked Questions</motion.h3>
+          <div className="space-y-8">
+            {/* FAQ 1 */}
+            <motion.div 
+              className="bg-background p-6 rounded-lg shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-lg font-semibold text-foreground mb-3">Placeholder: How long does a custom project typically take?</h4>
+              <p className="text-foreground/80">Placeholder: Custom projects generally take between 8-20 weeks from consultation to delivery, depending on the complexity, size, and materials involved. We provide a detailed timeline after the design is approved.</p>
+            </motion.div>
+            {/* FAQ 2 */}
+            <motion.div 
+              className="bg-background p-6 rounded-lg shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-lg font-semibold text-foreground mb-3">Placeholder: Can I provide my own design or concept?</h4>
+              <p className="text-foreground/80">Placeholder: Absolutely. We welcome your sketches, photos, or ideas as a starting point. Our team will work with you to refine and adapt your concept into a feasible design for crafting.</p>
+            </motion.div>
+            {/* FAQ 3 */}
+            <motion.div 
+              className="bg-background p-6 rounded-lg shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-lg font-semibold text-foreground mb-3">Placeholder: What types of wood do you work with?</h4>
+              <p className="text-foreground/80">Placeholder: We work with a variety of premium hardwoods including oak, walnut, cherry, maple, and mahogany, sourced sustainably. We can also accommodate special requests for exotic woods based on availability.</p>
+            </motion.div>
+            {/* FAQ 4 */}
+            <motion.div 
+              className="bg-background p-6 rounded-lg shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-lg font-semibold text-foreground mb-3">Placeholder: Do you ship internationally?</h4>
+              <p className="text-foreground/80">Placeholder: Yes, we ship worldwide. Shipping costs and timelines vary based on location and the size of the piece. We ensure secure packaging and can assist with customs documentation if needed.</p>
+            </motion.div>
+            {/* FAQ 5 */}
+            <motion.div 
+              className="bg-background p-6 rounded-lg shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-lg font-semibold text-foreground mb-3">Placeholder: What is your payment and deposit policy?</h4>
+              <p className="text-foreground/80">Placeholder: We typically require a 50% deposit upon design approval to begin crafting, with the balance due before delivery. Payment plans can be arranged for larger projects. We accept bank transfers and major credit cards.</p>
+            </motion.div>
+=======
       <section className="py-16 px-4 sm:px-8 bg-background" ref={stepsRef}>
         <div className="container mx-auto max-w-4xl">
           <div className="space-y-16">
@@ -131,12 +363,17 @@ export default function Process() {
                 <p className="text-foreground/80">Our commitment doesn't end at delivery—we follow up to ensure your complete satisfaction with the final result.</p>
               </div>
             </div>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
           </div>
         </div>
       </section>
 
       {/* Call to Action Section */}
+<<<<<<< HEAD
+      <section className="py-24 px-4 sm:px-8 bg-accent-primary/10">
+=======
       <section className="py-16 px-4 sm:px-8 bg-accent-primary/10">
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <motion.div 
           className="container mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -144,9 +381,15 @@ export default function Process() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
+<<<<<<< HEAD
+          <h3 className="text-3xl font-serif font-bold text-accent-primary mb-6">Ready to Start Your Journey?</h3>
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">Placeholder: Contact us to begin the process of creating a bespoke woodcarving piece tailored to your vision. Let’s craft something extraordinary together.</p>
+          <Link href="/commission" className="inline-block bg-accent-primary text-background px-8 py-3 rounded-md font-medium hover:bg-accent-primary/90 transition-colors">Begin Your Project</Link>
+=======
           <h3 className="text-3xl font-serif font-bold text-accent-primary mb-4">Ready to Begin Your Project?</h3>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">Experience our detailed craftsmanship process firsthand. Let's collaborate to create a bespoke piece that reflects your vision.</p>
           <Link href="/contact" className="inline-block bg-accent-primary text-background px-8 py-3 rounded-md font-medium hover:bg-accent-primary/90 transition-colors">Request a Consultation</Link>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         </motion.div>
       </section>
 
@@ -185,8 +428,11 @@ export default function Process() {
               <h5 className="font-bold text-foreground mb-3">Explore</h5>
               <ul className="space-y-2">
                 <li><Link href="/portfolio" className="text-foreground/70 hover:text-accent-primary transition-colors">Portfolio</Link></li>
+<<<<<<< HEAD
+=======
                 <li><Link href="/services" className="text-foreground/70 hover:text-accent-primary transition-colors">Services</Link></li>
                 <li><Link href="/process" className="text-foreground/70 hover:text-accent-primary transition-colors">Process</Link></li>
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
                 <li><Link href="/shop" className="text-foreground/70 hover:text-accent-primary transition-colors">Shop</Link></li>
                 <li><Link href="/blog" className="text-foreground/70 hover:text-accent-primary transition-colors">Blog</Link></li>
                 <li><Link href="/about" className="text-foreground/70 hover:text-accent-primary transition-colors">About Us</Link></li>
@@ -219,6 +465,15 @@ export default function Process() {
               <Link href="/terms" className="text-foreground/50 text-sm hover:text-foreground/80 transition-colors">Terms of Service</Link>
             </div>
           </div>
+<<<<<<< HEAD
+          {/* Newsletter Signup in Footer */}
+          <div className="mt-8 flex flex-col md:flex-row gap-3 justify-center">
+            <input type="email" placeholder="Subscribe to Newsletter" className="flex-1 px-4 py-3 border border-foreground/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary/50 bg-background text-foreground" required />
+            <button type="submit" className="bg-accent-primary text-background px-6 py-3 rounded-md font-medium hover:bg-accent-primary/90 transition-colors">Subscribe</button>
+          </div>
+          <p className="text-foreground/60 text-sm mt-3 text-center">We respect your privacy and will never share your information.</p>
+=======
+>>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         </div>
       </footer>
     </div>
