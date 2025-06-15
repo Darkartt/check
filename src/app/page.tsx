@@ -1,29 +1,62 @@
 "use client";
 
-<<<<<<< HEAD
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-=======
-import Link from "next/link";
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
 import HomeBackground from "../components/backgrounds/HomeBackground";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
+  const featuresRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (featuresRef.current) {
+        const featureItems = gsap.utils.toArray<HTMLElement>('.feature-item');
+        if (featureItems.length > 0) {
+          gsap.fromTo(
+            featureItems,
+            { y: 30, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: "expo.out",
+              stagger: 0.1,
+              delay: 0.2,
+              scrollTrigger: {
+                trigger: featuresRef.current,
+                start: "top 80%",
+                once: true,
+              }
+            }
+          );
+        }
+      }
+
+      const refreshTimeout = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 300);
+
+      return () => clearTimeout(refreshTimeout);
+    }, featuresRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground relative"> {/* Added position: relative for z-index context if needed, though HomeBackground is fixed */}
-      <HomeBackground /> {/* Moved HomeBackground to be a direct child */}
+    <div className="flex flex-col min-h-screen bg-background text-foreground relative">
+      <HomeBackground />
       <Header />
 
       {/* Hero Section */}
-      {/* HomeBackground is now a global background for this page */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-transparent z-10"> {/* Made bg-transparent, added z-index */}
-        {/* Removed HomeBackground from here */}
-        <div className="container mx-auto px-4 sm:px-8 text-center relative"> {/* Removed zIndex: 10, relies on parent's zIndex */}
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-transparent z-10">
+        <div className="container mx-auto px-4 sm:px-8 text-center relative">
           <motion.h2 
             className="text-4xl md:text-6xl font-serif font-bold text-accent-primary mb-6 hero-title"
             initial={{ opacity: 0, y: 20 }}
@@ -52,11 +85,7 @@ export default function Home() {
       </section>
 
       {/* Featured Section */}
-<<<<<<< HEAD
-      <section className="py-20 px-4 sm:px-8 bg-background relative z-10"> {/* Added relative and z-index */}
-=======
-      <section className="py-16 px-4 sm:px-8 bg-background relative z-10"> {/* Added relative and z-index */}
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
+      <section className="py-20 px-4 sm:px-8 bg-background relative z-10" ref={featuresRef}>
         <div className="container mx-auto">
           <motion.h3 
             className="text-3xl font-serif font-bold text-accent-primary mb-8 text-center"
@@ -67,7 +96,7 @@ export default function Home() {
           >Our Signature Craftsmanship</motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div 
-              className="group"
+              className="group feature-item"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -81,7 +110,7 @@ export default function Home() {
               <p className="text-foreground/70">Lifelike animal sculptures, meticulously carved and painted to capture every detail, creating unique masterpieces.</p>
             </motion.div>
             <motion.div 
-              className="group"
+              className="group feature-item"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -95,7 +124,7 @@ export default function Home() {
               <p className="text-foreground/70">Sacred carvings for churches and personal devotion, crafted with reverence and exceptional skill.</p>
             </motion.div>
             <motion.div 
-              className="group"
+              className="group feature-item"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -122,11 +151,7 @@ export default function Home() {
       </section>
 
       {/* About Preview Section */}
-<<<<<<< HEAD
-      <section className="py-20 px-4 sm:px-8 bg-foreground/5 relative z-10"> {/* Added relative and z-index */}
-=======
-      <section className="py-16 px-4 sm:px-8 bg-foreground/5 relative z-10"> {/* Added relative and z-index */}
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
+      <section className="py-20 px-4 sm:px-8 bg-foreground/5 relative z-10">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <motion.div 
             className="md:w-1/2 mb-8 md:mb-0 md:pr-8"
@@ -153,11 +178,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-<<<<<<< HEAD
-      <section className="py-20 px-4 sm:px-8 bg-background relative z-10"> {/* Added relative and z-index */}
-=======
-      <section className="py-16 px-4 sm:px-8 bg-background relative z-10"> {/* Added relative and z-index */}
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
+      <section className="py-20 px-4 sm:px-8 bg-background relative z-10">
         <div className="container mx-auto">
           <motion.h3 
             className="text-3xl font-serif font-bold text-accent-primary mb-8 text-center"
@@ -174,11 +195,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-<<<<<<< HEAD
               <p className="italic text-foreground/80 mb-4">"The custom dining table from Elite Woodcraft is a masterpiece. The craftsmanship and attention to detail exceeded our highest expectations."</p>
-=======
-              <p className="italic text-foreground/80 mb-4">'The custom dining table from Elite Woodcraft is a masterpiece. The craftsmanship and attention to detail exceeded our highest expectations.'</p>
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
               <p className="font-bold text-foreground">- Margaret R., Interior Designer</p>
             </motion.div>
             <motion.div 
@@ -188,11 +205,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-<<<<<<< HEAD
               <p className="italic text-foreground/80 mb-4">"We commissioned a carved mantel for our estate, and the result is breathtaking. Their expertise transformed our vision into reality."</p>
-=======
-              <p className="italic text-foreground/80 mb-4">'We commissioned a carved mantel for our estate, and the result is breathtaking. Their expertise transformed our vision into reality.'</p>
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
               <p className="font-bold text-foreground">- Edward T., Homeowner</p>
             </motion.div>
           </div>
@@ -200,11 +213,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action Section */}
-<<<<<<< HEAD
-      <section className="py-20 px-4 sm:px-8 bg-accent-primary/10 relative z-10"> {/* Added relative and z-index */}
-=======
-      <section className="py-16 px-4 sm:px-8 bg-accent-primary/10 relative z-10"> {/* Added relative and z-index */}
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
+      <section className="py-20 px-4 sm:px-8 bg-accent-primary/10 relative z-10">
         <motion.div 
           className="container mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -218,12 +227,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Removed GSAP ScrollTrigger Initialization in favor of Framer Motion */}
-<<<<<<< HEAD
-=======
-
       {/* Footer Section */}
-      <footer className="py-8 px-4 sm:px-8 bg-foreground/5 border-t border-foreground/10 relative z-10"> {/* Added relative and z-index */}
+      <footer className="py-8 px-4 sm:px-8 bg-foreground/5 border-t border-foreground/10 relative z-10">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
@@ -293,7 +298,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
     </div>
   );
 }
