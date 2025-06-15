@@ -17,13 +17,9 @@ export const metadata: Metadata = {
   description: "Discover exceptional custom woodcarving craftsmanship. Bespoke wooden products for discerning clients who value quality and artistry.",
 };
 
-<<<<<<< HEAD
 import Header from "../components/Header";
-
 import Footer from "../components/Footer";
 
-=======
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,9 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-<<<<<<< HEAD
+      <head>
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+      </head>
       <body
-        className="antialiased"
+        className={`${geistSans.className} ${geistMono.className} antialiased`}
         style={{
           fontFamily: `${geistSans.variable}, ${geistMono.variable}`
         }}
@@ -43,15 +41,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-=======
-      <head>
-        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
-      </head>
-      <body
-        className={`${geistSans.className} ${geistMono.className} antialiased`}
-      >
-        {children}
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
       </body>
     </html>
   );

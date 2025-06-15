@@ -11,11 +11,7 @@ export default function About() {
       <Header />
 
       {/* Hero Section */}
-<<<<<<< HEAD
       <section className="relative py-20 px-4 sm:px-8 bg-foreground/5">
-=======
-      <section className="relative py-16 px-4 sm:px-8 bg-foreground/5">
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         {/* Replacing ThreeBackground with AboutBackground */}
         {/* The AboutBackground component has its own styling including height: 70vh */}
         {/* We might need to adjust the section's padding or structure if this doesn't look right */}
@@ -37,20 +33,12 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-<<<<<<< HEAD
           >Discover the legacy of Elite Woodcraft, based in Liverpool, crafting unique wooden masterpieces for clients worldwide with over three decades of expertise.</motion.p>
-=======
-          >Discover the legacy of Elite Woodcraft, based in Liverpool, crafting unique wooden masterpieces for clients worldwide with over three decades of expertis'e.</motion.p>
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         </div>
       </section>
 
       {/* History Section */}
-<<<<<<< HEAD
       <section className="py-20 px-4 sm:px-8 bg-background">
-=======
-      <section className="py-16 px-4 sm:px-8 bg-background">
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto max-w-4xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
             <motion.div 
@@ -95,11 +83,7 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-<<<<<<< HEAD
       <section className="py-20 px-4 sm:px-8 bg-foreground/5">
-=======
-      <section className="py-16 px-4 sm:px-8 bg-foreground/5">
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto">
           <motion.h3 
             className="text-3xl font-serif font-bold text-accent-primary mb-8 text-center"
@@ -144,11 +128,7 @@ export default function About() {
       </section>
 
       {/* Call to Action Section */}
-<<<<<<< HEAD
       <section className="py-20 px-4 sm:px-8 bg-accent-primary/10">
-=======
-      <section className="py-16 px-4 sm:px-8 bg-accent-primary/10">
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <motion.div 
           className="container mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -161,8 +141,6 @@ export default function About() {
           <Link href="/contact" className="inline-block bg-accent-primary text-background px-8 py-3 rounded-md font-medium hover:bg-accent-primary/90 transition-colors">Request a Consultation</Link>
         </motion.div>
       </section>
-<<<<<<< HEAD
-=======
 
       {/* Footer Section */}
       <footer className="py-8 px-4 sm:px-8 bg-foreground/5 border-t border-foreground/10">
@@ -235,7 +213,6 @@ export default function About() {
           </div>
         </div>
       </footer>
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
     </div>
   );
 }

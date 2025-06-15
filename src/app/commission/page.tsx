@@ -11,11 +11,7 @@ export default function CommissionPage() {
       <Header />
 
       {/* Main Content Area */}
-<<<<<<< HEAD
       <main className="flex-grow container mx-auto px-4 sm:px-8 py-20">
-=======
-      <main className="flex-grow container mx-auto px-4 sm:px-8 py-12">
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -78,11 +74,7 @@ export default function CommissionPage() {
       </main>
 
       {/* Footer Section */}
-<<<<<<< HEAD
-      <footer className="py-20 px-4 sm:px-8 bg-foreground/5 border-t border-foreground/10 mt-16">
-=======
       <footer className="py-8 px-4 sm:px-8 bg-foreground/5 border-t border-foreground/10 mt-16">
->>>>>>> f7d0c5bf1442387ada4246c3e9b3d86ab7f25bfe
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
